@@ -5,6 +5,7 @@
         public int Id { get; set; }
 
         public String Title { get; set; } = null!;
+        public String Content { get; set; } = null!;
 
         public DateTime CreatedAt { get; set; }
 
