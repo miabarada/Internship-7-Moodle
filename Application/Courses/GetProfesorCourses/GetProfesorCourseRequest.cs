@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Courses.CreateCourse
+namespace Application.Courses.GetProfesorCourses
 {
-    internal class CreateCourse
+    internal class GetProfesorCourseRequest
     {
     }
 }
