@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Infrastructure.Database
+﻿namespace Infrastructure.Database
 {
-    internal class Schemas
+    internal static class Schemas
     {
+        public const string Default = "public";
     }
 }

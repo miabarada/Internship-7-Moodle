@@ -1,12 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Persistence.Announcements;
+using Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories.Announcements
 {
-    internal class AnnouncementRepository
+    internal sealed class AnnouncementRepository : Repository<Announcement, int>, IAnnouncementRepository
     {
+        private readonly AppDbContext _dbContext;
+
+        public AnnouncementRepository(AppDbContext dbContext)
+            : base(dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
+        public async void Add(Announcement announcement)
+        {
+            await _dbContext.Announcements.AddAsync(announcement);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Announcement>> GetByCourse(int id)
+        {
+            return await _dbContext.Announcements
+                .Where(c => c.CourseId == id)
+                .ToListAsync();
+        }
     }
 }

@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Persistence.Common;
 
 namespace Domain.Persistence.Users
 {
-    internal interface IUserRepository
+    public interface IUserRepository : IRepository<User, int>
     {
+        Task<User?> GetById(int id);
+        Task<User?> GetByEmail(string email);
+
+        Task<IEnumerable<User>> GetAll();
+        Task<IEnumerable<User>> GetStudents();
+        Task<IEnumerable<User>> GetProfessors();
+
+        void Add(User user);
+        void Update(User user);
+        void Remove(User user);
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Persistence.Common;
 
 namespace Domain.Persistence.PrivateMessages
 {
-    internal interface IPrivateMessageUnitOfWork
+    public interface IPrivateMessageUnitOfWork : IUnitOfWork
     {
+        IPrivateMessageRepository Repository { get; }
     }
 }

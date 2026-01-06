@@ -1,12 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Persistence.Materials;
+using Infrastructure.Database;
 
 namespace Infrastructure.Repositories.Materials
 {
-    internal class MaterialUnitOfWork
+    public class MaterialUnitOfWork : IMaterialUnitOfWork
     {
+        private readonly AppDbContext _dbContext;
+        public IMaterialRepository Repository { get; }
+
+        public MaterialUnitOfWork(AppDbContext dbContext, IMaterialRepository repository)
+        {
+            _dbContext = dbContext;
+            Repository = repository;
+        }
+
+        public async Task CreateTransaction()
+        {
+            await _dbContext.Database.BeginTransactionAsync();
+        }
+
+        public async Task Commit()
+        {
+            await _dbContext.SaveChangesAsync();
+            await _dbContext.Database.CommitTransactionAsync();
+        }
+
+        public async Task Rollback()
+        {
+            await _dbContext.Database.RollbackTransactionAsync();
+        }
+
+        public async Task SaveAsync()
+        {
+            await _dbContext.SaveChangesAsync();
+        }
     }
 }

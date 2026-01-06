@@ -7,8 +7,8 @@
         public int SenderId { get; set; }
         public User Sender { get; set; } = null!;
 
-        public int RecieverId { get; set; }
-        public User Reciever { get; set; } = null!;
+        public int ReceiverId { get; set; }
+        public User Receiver { get; set; } = null!;
 
         public String Content { get; set; } = null!;
         public DateTime SentAt { get; set; }

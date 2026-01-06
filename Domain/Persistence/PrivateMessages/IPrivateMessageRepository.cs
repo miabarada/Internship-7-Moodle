@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Domain.Persistence.Common;
 
 namespace Domain.Persistence.PrivateMessages
 {
-    internal interface IPrivateMessageRepository
+    public interface IPrivateMessageRepository : IRepository<PrivateMessage, int>
     {
+        Task<IEnumerable<PrivateMessage>> GetConversation(int User1Id, int User2Id);
+        Task<IEnumerable<PrivateMessage>> GetUserChats(int UserID);
+
+        void Add(PrivateMessage privateMessage);
     }
 }
