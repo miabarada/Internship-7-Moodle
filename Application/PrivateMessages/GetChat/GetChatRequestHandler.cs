@@ -4,11 +4,11 @@ using Domain.Persistence.PrivateMessages;
 
 namespace Application.PrivateMessages.GetChat
 {
-    public class GetUserChatRequestHandler : RequestHandler<GetChatRequest, List<PrivateMessageDTO>>
+    public class GetChatRequestHandler : RequestHandler<GetChatRequest, List<PrivateMessageDTO>>
     {
         private readonly IPrivateMessageRepository _privateMessageRepository;
 
-        public GetUserChatRequestHandler(IPrivateMessageRepository privateMessageRepository)
+        public GetChatRequestHandler(IPrivateMessageRepository privateMessageRepository)
         {
             _privateMessageRepository = privateMessageRepository;
         }

@@ -4,13 +4,13 @@
     {
         public static string ReadLine()
         {
-            return Console.ReadLine() ?? "";
+            return System.Console.ReadLine() ?? "";
         }
 
         public static string ReadInput(string prompt)
         {
-            Console.Write(prompt);
-            return Console.ReadLine() ?? "";
+            System.Console.Write(prompt);
+            return System.Console.ReadLine() ?? "";
         }
 
         public static int? ReadInt(string prompt)

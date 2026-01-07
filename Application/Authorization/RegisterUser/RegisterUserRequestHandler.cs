@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Application.Authorization.RegisterUser
 {
-    internal class RegisterUserRequestHandler : RequestHandler<RegisterUserRequest, RegisterUserDTO>
+    public sealed class RegisterUserRequestHandler : RequestHandler<RegisterUserRequest, RegisterUserDTO>
     {
         private readonly IUserRepository _userRepository;
 
