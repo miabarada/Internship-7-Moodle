@@ -40,7 +40,8 @@ namespace Infrastructure.Database.Configurations.PrivateMessages
 
             builder.Property(x => x.SentAt)
                 .HasColumnName("SentAt")
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("timestamp without time zone");
         }
     }
 }

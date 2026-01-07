@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Announcements.GetCourseAnnouncements
+﻿namespace Application.Announcements.GetCourseAnnouncements
 {
-    internal class GetCourseAnnouncementsRequest
+    public class GetCourseAnnouncementsRequest
     {
+        public int CourseId { get; init; }
     }
 }

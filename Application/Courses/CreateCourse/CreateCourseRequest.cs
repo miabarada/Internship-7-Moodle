@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Courses.CreateCourse
+﻿namespace Application.Courses.CreateCourse
 {
-    internal class CreateCourseRequest
+    public sealed class CreateCourseRequest
     {
+        public string Name { get; init; } = null!;
+        public int ProfesorId { get; init; }
     }
 }

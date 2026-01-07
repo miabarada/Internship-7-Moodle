@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain.DTOs
 {
-    internal class AnnouncementDTO
+    public class AnnouncementDTO
     {
+        public int Id { get; init; }
+        public string? Title { get; set; }
+        public string? Content { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public int CourseId { get; init; }
+        public int ProfesorId { get; init; }
     }
 }

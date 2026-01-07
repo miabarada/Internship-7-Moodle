@@ -1,6 +1,6 @@
 ﻿namespace Domain.Common.Validation
 {
-    public  class ValidationResult
+    public class ValidationResult
     {
         private List<ValidationItem> _validationItems = new List<ValidationItem>();
         public IReadOnlyList<ValidationItem> ValidationItems => _validationItems.AsReadOnly();
@@ -19,5 +19,59 @@
             if (items != null && items.Any())
                 _validationItems.AddRange(items);
         }
+
+        public static ValidationResult Error(
+            string code,
+            string message,
+            ValidationType type = ValidationType.SystemError)
+        {
+            var result = new ValidationResult();
+
+            result.AddValidationItem(new ValidationItem
+            {
+                Code = code,
+                Message = message,
+                ValidationSeverity = ValidationSeverity.Error,
+                ValidationType = type
+            });
+
+            return result;
+        }
+
+        public static ValidationResult Warning(
+            string code,
+            string message,
+            ValidationType type = ValidationType.BussinessRule)
+        {
+            var result = new ValidationResult();
+
+            result.AddValidationItem(new ValidationItem
+                {
+                Code = code,
+                Message = message,
+                ValidationSeverity = ValidationSeverity.Warning,
+                ValidationType = type
+            });
+
+            return result;
+        }
+
+         public static ValidationResult Info(
+             string code,
+             string message,
+             ValidationType type = ValidationType.BussinessRule)
+         {
+             var result = new ValidationResult();
+
+             result.AddValidationItem(new ValidationItem
+             {
+                 Code = code,
+                 Message = message,
+                 ValidationSeverity = ValidationSeverity.Info,
+                 ValidationType = type
+             });
+
+             return result;
+         }
     }
 }

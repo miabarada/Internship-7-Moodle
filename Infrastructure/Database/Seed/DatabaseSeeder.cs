@@ -183,7 +183,8 @@ namespace Infrastructure.Database.Seed
                     Name = "Algebarski izrazi",
                     Url = "https://example.com/algebarskiizrazi",
                     CreatedAt = new DateTime(2024, 10, 2),
-                    CourseId = 1
+                    CourseId = 1,
+                    ProfessorId = 7
                 },
                 new Material
                 {
@@ -191,7 +192,8 @@ namespace Infrastructure.Database.Seed
                     Name = "Lovac u zitu",
                     Url = "https://example.com/lovacuzitu",
                     CreatedAt = new DateTime(2024, 10, 4),
-                    CourseId = 2
+                    CourseId = 2,
+                    ProfessorId = 8
                 },
                 new Material
                 {
@@ -199,7 +201,8 @@ namespace Infrastructure.Database.Seed
                     Name = "Diferencijalne jednadzbe",
                     Url = "https://example.com/difjedn",
                     CreatedAt = new DateTime(2024, 10, 6),
-                    CourseId = 3
+                    CourseId = 3,
+                    ProfessorId = 9
                 },
                 new Material
                 {
@@ -207,7 +210,8 @@ namespace Infrastructure.Database.Seed
                     Name = "Kako komunicirati",
                     Url = "https://example.com/komuniciranje",
                     CreatedAt = new DateTime(2024, 10, 8),
-                    CourseId = 4
+                    CourseId = 4,
+                    ProfessorId = 10
                 },
                 new Material
                 {
@@ -215,7 +219,8 @@ namespace Infrastructure.Database.Seed
                     Name = "Klasicizam",
                     Url = "https://example.com/klasicizam",
                     CreatedAt = new DateTime(2024, 10, 10),
-                    CourseId = 5
+                    CourseId = 5,
+                    ProfessorId = 11
                 }
             );
 

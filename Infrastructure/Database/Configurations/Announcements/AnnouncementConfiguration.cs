@@ -26,7 +26,8 @@ namespace Infrastructure.Database.Configurations.Announcements
 
             builder.Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("timestamp without time zone");
 
             builder.Property(x => x.CourseId)
                 .HasColumnName("CourseId")

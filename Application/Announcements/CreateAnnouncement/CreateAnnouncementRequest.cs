@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Announcements.CreateAnnouncement
+﻿namespace Application.Announcements.CreateAnnouncement
 {
-    internal class CreateAnnouncementRequest
+    public sealed class CreateAnnouncementRequest
     {
+        public string Title { get; init; } = null!;
+        public string Content { get; init; } = null!;
+        public int CourseId { get; init; }
+        public int ProfesorId { get; init; }
     }
 }

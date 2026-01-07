@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Materials.CreateMaterial
+﻿namespace Application.Materials.CreateMaterial
 {
-    internal class CreateMaterialRequest
+    public class CreateMaterialRequest
     {
+        public string Name { get; init; } = null!;
+        public string Url { get; init; } = null!;
+        public int CourseId { get; init; }
+        public int ProfesorId { get; init; }
     }
 }

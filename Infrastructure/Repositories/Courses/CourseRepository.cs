@@ -2,7 +2,6 @@
 using Domain.Persistence.Courses;
 using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
-using static Domain.Common.Validation.ValidationItems.ValidationItems;
 
 namespace Infrastructure.Repositories.Courses
 {

@@ -9,7 +9,7 @@ namespace Infrastructure.Database.Configurations.Materials
         {
             builder.ToTable("Material");
 
-            builder.HasKey(m => m.Id);
+            builder.HasKey(a => a.Id);
             builder.Property(x => x.Id)
                 .HasColumnName("Id");
 
@@ -21,11 +21,12 @@ namespace Infrastructure.Database.Configurations.Materials
             builder.Property(x => x.Url)
                 .HasColumnName("Url")
                 .IsRequired()
-                .HasMaxLength(200);
+                .HasMaxLength(5000);
 
             builder.Property(x => x.CreatedAt)
                 .HasColumnName("CreatedAt")
-                .IsRequired();
+                .IsRequired()
+                .HasColumnType("timestamp without time zone");
 
             builder.Property(x => x.CourseId)
                 .HasColumnName("CourseId")
@@ -34,6 +35,15 @@ namespace Infrastructure.Database.Configurations.Materials
             builder.HasOne(c => c.Course)
                 .WithMany(c => c.Materials)
                 .HasForeignKey(c => c.CourseId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(x => x.ProfessorId)
+                .HasColumnName("ProfessorId")
+                .IsRequired();
+
+            builder.HasOne(c => c.Professor)
+                .WithMany()
+                .HasForeignKey(c => c.ProfessorId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

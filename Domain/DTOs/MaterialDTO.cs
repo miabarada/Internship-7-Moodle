@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.DTOs
+﻿namespace Domain.DTOs
 {
-    internal class MaterialDTO
+    public class MaterialDTO
     {
+        public int Id { get; init; }
+        public string? Name { get; set; }
+        public string? Url { get; set; } = null;
+        public DateTime CreatedAt { get; set; }
+        public int CourseId { get; init; }
+        public int ProfesorId { get; init; }
     }
 }

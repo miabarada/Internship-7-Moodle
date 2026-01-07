@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Common
+﻿namespace Application.Common
 {
-    internal class GetByIdRequest
+    public class GetByIdRequest
     {
+        public int Id { get; init; }
     }
 }

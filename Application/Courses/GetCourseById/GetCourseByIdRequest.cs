@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.Common;
 
 namespace Application.Courses.GetCourseById
 {
-    internal class GetCourseByIdRequest
+    public sealed class GetCourseByIdRequest : GetByIdRequest
     {
     }
 }

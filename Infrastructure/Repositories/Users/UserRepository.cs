@@ -21,6 +21,11 @@ namespace Infrastructure.Repositories.Users
             await _dbContext.SaveChangesAsync();
         }
 
+        public Task<bool> Exists(string Email)
+        {
+            return _dbContext.Users.AnyAsync(u => u.Email == Email);
+        }
+
         public async Task<IEnumerable<User>> GetAll()
         {
             return await _dbContext.Users.ToListAsync();

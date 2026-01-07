@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Materials.GetCourseMaterials
+﻿namespace Application.Materials.GetCourseMaterials
 {
-    internal class GetCourseMaterialsRequest
+    public class GetCourseMaterialsRequest
     {
+        public int CourseId { get; init; }
     }
 }

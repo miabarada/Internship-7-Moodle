@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Courses.EnrollStudent
+﻿namespace Application.Courses.EnrollStudent
 {
-    internal class EnrollStudentRequest
+    public sealed class EnrollStudentRequest
     {
+        public int StudentId { get; init; }
+        public int CourseId { get; init; }
+        public int ProfesorId { get; init; }
     }
 }

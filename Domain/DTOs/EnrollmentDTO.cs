@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.DTOs
+﻿namespace Domain.DTOs
 {
-    internal class EnrollmentDTO
+    public class EnrollmentDTO
     {
+        public int Id { get; init; }
+        public int StudentId { get; init; }
+        public int CourseId { get; init; }
     }
 }

@@ -11,6 +11,7 @@ namespace Domain.Persistence.Users
         Task<IEnumerable<User>> GetAll();
         Task<IEnumerable<User>> GetStudents();
         Task<IEnumerable<User>> GetProfessors();
+        Task<bool> Exists(string Email);
 
         void Add(User user);
         void Update(User user);

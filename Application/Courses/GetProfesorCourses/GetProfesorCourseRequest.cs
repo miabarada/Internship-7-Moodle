@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Application.Courses.GetProfesorCourses
+﻿namespace Application.Courses.GetProfesorCourses
 {
-    internal class GetProfesorCourseRequest
+    public class GetProfesorCourseRequest
     {
+        public int ProfesorId { get; init; }
     }
 }
