@@ -1,12 +1,14 @@
 ﻿using Domain.Persistence.Announcements;
 using Domain.Persistence.Common;
 using Domain.Persistence.Courses;
+using Domain.Persistence.Enrollments;
 using Domain.Persistence.Materials;
 using Domain.Persistence.PrivateMessages;
 using Domain.Persistence.Users;
 using Infrastructure.Database;
 using Infrastructure.Repositories.Announcements;
 using Infrastructure.Repositories.Courses;
+using Infrastructure.Repositories.Enrollments;
 using Infrastructure.Repositories.Materials;
 using Infrastructure.Repositories.PrivateMessages;
 using Infrastructure.Repositories.Users;
@@ -45,6 +47,7 @@ namespace Infrastructure
             services.AddScoped<IAnnouncementRepository, AnnouncementRepository>();
             services.AddScoped<IMaterialRepository, MaterialRepository>();
             services.AddScoped<IPrivateMessageRepository, PrivateMessageRepository>();
+            services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }

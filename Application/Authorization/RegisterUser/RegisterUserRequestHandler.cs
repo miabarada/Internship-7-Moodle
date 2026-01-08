@@ -53,6 +53,11 @@ namespace Application.Authorization.RegisterUser
             result.SetResult(new RegisterUserDTO
             {
                 UserId = user.Id,
+                Email = user.Email,
+                PasswordHush = user.PasswordHash,
+                Name = user.Name,
+                Surname = user.Surname,
+                Role = user.Role
             });
             return result;
         }

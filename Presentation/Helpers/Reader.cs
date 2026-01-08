@@ -4,19 +4,19 @@
     {
         public static string ReadLine()
         {
-            return System.Console.ReadLine() ?? "";
+            return Console.ReadLine() ?? "";
         }
 
         public static string ReadInput(string prompt)
         {
-            System.Console.Write(prompt);
-            return System.Console.ReadLine() ?? "";
+            Console.Write(prompt);
+            return Console.ReadLine() ?? "";
         }
 
         public static int? ReadInt(string prompt)
         {
             System.Console.Write(prompt);
-            var input = System.Console.ReadLine();
+            var input = Console.ReadLine();
 
             if (int.TryParse(input, out int result))
             {
@@ -26,7 +26,7 @@
             return null;
         }
 
-        public static string ReadMenuChoice(string prompt = "Select an option: ")
+        public static string ReadMenuChoice(string prompt = "Izaberi opciju: ")
         {
             System.Console.Write(prompt);
             return System.Console.ReadLine() ?? "";

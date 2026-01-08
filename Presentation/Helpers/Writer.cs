@@ -10,34 +10,43 @@ namespace Presentation.Helpers
 
             if (!userList.Any())
             {
-                System.Console.WriteLine("No users found.");
+                Console.WriteLine("No users found.");
                 return;
             }
 
             foreach (var user in userList)
             {
-                System.Console.WriteLine($"ID: {user.Id} | Name: {user.Name}");
+                Console.WriteLine($"ID: {user.Id} | Name: {user.Name}");
             }
         }
         public static void DisplayMenu(string title, Dictionary<string, (string Description, Func<Task<bool>> Action)> options)
         {
-            System.Console.WriteLine($"\n=== {title} ===");
+            Console.WriteLine($"\n=== {title} ===");
 
             foreach (var option in options)
             {
-                System.Console.WriteLine($"{option.Key}. {option.Value.Description}");
+                Console.WriteLine($"{option.Key}. {option.Value.Description}");
             }
         }
 
         public static void WriteMessage(string message)
         {
-            System.Console.WriteLine(message);
+            Console.WriteLine(message);
         }
 
-        public static void WaitForKey()
+        public static void WriteCourses(List<IEnumerable<CourseResponse>> courseList)
         {
-            System.Console.WriteLine("Press any key to continue...");
-            System.Console.ReadKey();
+            if (!courseList.Any())
+            {
+                System.Console.WriteLine($"Nije pronađen nijedan kolegij");
+                return;
+            }
+
+            for (int i = 0; i < courseList.Count; i++)
+            {
+                var course = courseList.ElementAt(i);
+                System.Console.WriteLine($"{i + 1}. Naslov: {course.Count()}\n");
+            }
         }
     }
 }

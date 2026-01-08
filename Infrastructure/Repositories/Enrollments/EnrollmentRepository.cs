@@ -4,7 +4,7 @@ using Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 namespace Infrastructure.Repositories.Enrollments
 {
-    internal sealed class EnrollmentRepository : Repository<Enrollment, int>, IEnrollmentRepository
+    public sealed class EnrollmentRepository : Repository<Enrollment, int>, IEnrollmentRepository
     {
         private readonly AppDbContext _dbContext;
 
@@ -27,14 +27,14 @@ namespace Infrastructure.Repositories.Enrollments
                 .AnyAsync(cs => cs.StudentId == StudentId && cs.CourseId == CourseId);
         }
 
-        public Task<IEnumerable<Enrollment>> GetByCourse(int CourseId)
+        public async Task<IEnumerable<Enrollment>> GetByCourse(int CourseId)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Enrollments.Where(e => e.CourseId == CourseId).ToListAsync();
         }
 
-        public Task<IEnumerable<Enrollment>> GetByStudent(int StudentId)
+        public async Task<IEnumerable<Enrollment>> GetByStudent(int StudentId)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Enrollments.Where(e => e.StudentId == StudentId).ToListAsync();
         }
 
         public void Remove(Enrollment enrollment)
